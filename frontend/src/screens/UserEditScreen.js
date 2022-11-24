@@ -14,7 +14,7 @@ const UserEditScreen = ({ match, history }) => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [isAdmin, setIsAdmin] = useState(false)
-
+  console.log(isAdmin,"isAdmin1")
   const dispatch = useDispatch()
 
   const userDetails = useSelector((state) => state.userDetails)
@@ -33,17 +33,20 @@ const UserEditScreen = ({ match, history }) => {
       history.push('/admin/userlist')
     } else {
       if (!user.name || user._id !== userId) {
+        console.log(isAdmin,"isAdmin2")
         dispatch(getUserDetails(userId))
       } else {
         setName(user.name)
         setEmail(user.email)
         setIsAdmin(user.isAdmin)
+        console.log(isAdmin,"isAdmin3")
       }
     }
   }, [dispatch, history, userId, user, successUpdate])
 
   const submitHandler = (e) => {
     e.preventDefault()
+    console.log(isAdmin,"isAdmin4")
     dispatch(updateUser({ _id: userId, name, email, isAdmin }))
   }
 
@@ -81,14 +84,15 @@ const UserEditScreen = ({ match, history }) => {
                 onChange={(e) => setEmail(e.target.value)}
               ></Form.Control>
             </Form.Group>
-
-            <Form.Group controlId='isadmin'>
+            
+            <Form.Group>
               <Form.Check
                 type='checkbox'
                 label='Is Admin'
-                checked={isAdmin}
+                checked={isAdmin ? 1 : 0}
                 onChange={(e) => setIsAdmin(e.target.checked)}
               ></Form.Check>
+              
             </Form.Group>
 
             <Button type='submit' variant='primary'>

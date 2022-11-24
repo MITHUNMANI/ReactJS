@@ -74,7 +74,7 @@ const OrderScreen = ({ match, history }) => {
         setSdkReady(true)
       }
     }
-  }, [dispatch, orderId, successPay, successDeliver, order])
+  }, [dispatch, orderId, successPay, successDeliver, order,userInfo,history])
 
   const successPaymentHandler = (paymentResult) => {
     console.log(paymentResult)
@@ -210,7 +210,7 @@ const OrderScreen = ({ match, history }) => {
               )}
               {loadingDeliver && <Loader />}
               {userInfo &&
-                userInfo.isAdmin &&
+                userInfo.isAdmin === "true" &&
                 order.isPaid &&
                 !order.isDelivered && (
                   <ListGroup.Item>

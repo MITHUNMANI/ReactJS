@@ -151,7 +151,7 @@ const updateUser = asyncHandler(async (req, res) => {
     user.name = req.body.name || user.name
     user.email = req.body.email || user.email
     user.isAdmin = req.body.isAdmin
-
+    console.log(req.body.isAdmin,'Admin')
     const updatedUser = await user.save()
 
     res.json({

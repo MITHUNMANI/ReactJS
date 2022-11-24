@@ -21,7 +21,7 @@ const Header = () => {
       <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>
         <Container>
           <LinkContainer to='/'>
-            <Navbar.Brand>ProShop</Navbar.Brand>
+            <Navbar.Brand>Caden's Home</Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
@@ -48,7 +48,7 @@ const Header = () => {
                   </Nav.Link>
                 </LinkContainer>
               )}
-              {userInfo && userInfo.isAdmin && (
+              {userInfo && userInfo.isAdmin === "true" && (
                 <NavDropdown title='Admin' id='adminmenu'>
                   <LinkContainer to='/admin/userlist'>
                     <NavDropdown.Item>Users</NavDropdown.Item>

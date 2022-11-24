@@ -12,9 +12,9 @@ const Meta = ({ title, description, keywords }) => {
 }
 
 Meta.defaultProps = {
-  title: 'Welcome To Food App',
-  description: 'We sell the best Food for cheap',
-  keywords: 'Veg and Non-Veg',
+  title: "Caden's Kennal",
+  description: 'We are pet friends',
+  keywords: 'Best Pets',
 }
 
 export default Meta
