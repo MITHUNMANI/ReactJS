@@ -14,7 +14,7 @@ const Meta = ({ title, description, keywords }) => {
 Meta.defaultProps = {
   title: "Caden's Kennal",
   description: 'We are pet friends',
-  keywords: 'Best Pets',
+  keywords: 'Best Pets, Nilgiris Pets',
 }
 
 export default Meta
